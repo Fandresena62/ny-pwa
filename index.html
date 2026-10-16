@@ -74,13 +74,16 @@
     </div>
 
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(reg => console.log('SW Tafiditra!'))
-                    .catch(err => console.log('Nisy olana:', err));
-            });
-        }
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then(reg => {
+                    console.log('Service Worker tafiditra soa aman-tsara!');
+                    // Mandrisika ny finday hampiseho ny bokotra installation rehefa vonona ny zava-drehetra
+                })
+                .catch(err => console.log('Olana amin\'ny SW:', err));
+        });
+    }
     </script>
 </body>
 </html>
