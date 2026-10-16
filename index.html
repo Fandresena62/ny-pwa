@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ny PWA-ko Voalohany</title>
+    <!-- Ampitengina eto ny Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Loko ho an'ny bara ambony amin'ny finday -->
+    <meta name="theme-color" content="#317EFB">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #f4f4f9; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Salama tany mbola tsy nisy! 👋</h1>
+        <p>Ity no Progressive Web App voalohany nosoratako.</p>
+    </div>
+
+    <!-- Script hanoratana ny Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('Service Worker tafiditra soa aman-tsara!', reg))
+                    .catch(err => console.log('Nisy olana ny fampidirana ny SW:', err));
+            });
+        }
+    </script>
+</body>
+</html>
